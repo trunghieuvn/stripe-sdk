@@ -49,7 +49,9 @@ class StripeCard {
   ///
   /// @return {@code true} if valid, {@code false} otherwise
   bool validateCVC() {
-    if (cvc == null) return false;
+    if (cvc == null) {
+      return false;
+    }
     return _ccValidator
         .validateCVV(cvc, _ccValidator.validateCCNum(number).ccType)
         .isValid;
